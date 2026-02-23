@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse luxury property listings across South Africa - PrestigeEstates" />
+  <title>Listings - PrestigeEstates</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="home.html" class="logo nav-click">PRESTIGE<span>ESTATES</span></a>
+        <nav class="desktop-nav">
+          <a href="home.html" class="nav-click">Home</a>
+          <a href="listings.html" class="nav-click">Listings</a>
+          <a href="about.html" class="nav-click">About Us</a>
+          <a href="team.html" class="nav-click">Our Team</a>
+          <a href="services.html" class="nav-click">Services</a>
+          <a href="contact.html" class="nav-click">Contact</a>
+        </nav>
+        <button class="mobile-toggle" id="mobile-toggle">☰</button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="home.html" class="nav-click">Home</a>
+        <a href="listings.html" class="nav-click">Listings</a>
+        <a href="about.html" class="nav-click">About Us</a>
+        <a href="team.html" class="nav-click">Our Team</a>
+        <a href="services.html" class="nav-click">Services</a>
+        <a href="contact.html" class="nav-click">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-transition">
+
+        <section class="page-banner">
+          <h1>Our <span class="text-gold-gradient">Listings</span></h1>
+          <p>Browse our exclusive collection of luxury properties</p>
+        </section>
+
+        <section class="section-padding">
+          <div class="container">
+
+            <div class="filters">
+              <div>
+                <label class="filter-label">Location</label>
+                <select id="filter-location" class="filter-input" onchange="filterListings()">
+                  <option>All</option>
+                  <option>Sandton</option>
+                  <option>Cape Town</option>
+                  <option>Pretoria</option>
+                  <option>Durban</option>
+                  <option>Johannesburg</option>
+                </select>
+              </div>
+              <div>
+                <label class="filter-label">Min Price (R)</label>
+                <input type="number" id="filter-min-price" class="filter-input" value="0" onchange="filterListings()" />
+              </div>
+              <div>
+                <label class="filter-label">Max Price (R)</label>
+                <input type="number" id="filter-max-price" class="filter-input" value="20000000" onchange="filterListings()" />
+              </div>
+              <div>
+                <label class="filter-label">Min Bedrooms</label>
+                <select id="filter-bedrooms" class="filter-input" onchange="filterListings()">
+                  <option value="0">Any</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
+                  <option value="5">5+</option>
+                  <option value="6">6+</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="text-sm text-muted mb-6" id="results-count">6 properties found</p>
+
+            <div class="grid-3">
+
+              <div class="card property-card" data-location="Sandton" data-price="8500000" data-bedrooms="5">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=800" alt="Mediterranean Villa" />
+                <div class="card-body">
+                  <span class="text-xs text-gold font-semibold" style="text-transform:uppercase;letter-spacing:0.1em;">Villa</span>
+                  <h3 class="mt-1">Mediterranean Villa</h3>
+                  <p class="text-sm text-muted">Sandton</p>
+                  <p class="text-gold font-bold text-xl mt-2">R 8,500,000</p>
+                  <div class="text-xs text-muted mt-3" style="display:flex;gap:1rem;border-top:1px solid var(--border-color);padding-top:0.75rem;">
+                    <span>5 Beds</span><span>4 Baths</span><span>450 m²</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card property-card" data-location="Cape Town" data-price="12000000" data-bedrooms="3">
+                <img src="https://images.stockcake.com/public/5/7/3/573a0eda-18c9-4bf8-ae18-1397ad4b3b39_large/luxurious-twilight-penthouse-stockcake.jpg" alt="Skyline Penthouse" />
+                <div class="card-body">
+                  <span class="text-xs text-gold font-semibold" style="text-transform:uppercase;letter-spacing:0.1em;">Penthouse</span>
+                  <h3 class="mt-1">Skyline Penthouse</h3>
+                  <p class="text-sm text-muted">Cape Town</p>
+                  <p class="text-gold font-bold text-xl mt-2">R 12,000,000</p>
+                  <div class="text-xs text-muted mt-3" style="display:flex;gap:1rem;border-top:1px solid var(--border-color);padding-top:0.75rem;">
+                    <span>3 Beds</span><span>3 Baths</span><span>280 m²</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card property-card" data-location="Pretoria" data-price="3200000" data-bedrooms="4">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Colonial Family Home" />
+                <div class="card-body">
+                  <span class="text-xs text-gold font-semibold" style="text-transform:uppercase;letter-spacing:0.1em;">House</span>
+                  <h3 class="mt-1">Colonial Family Home</h3>
+                  <p class="text-sm text-muted">Pretoria</p>
+                  <p class="text-gold font-bold text-xl mt-2">R 3,200,000</p>
+                  <div class="text-xs text-muted mt-3" style="display:flex;gap:1rem;border-top:1px solid var(--border-color);padding-top:0.75rem;">
+                    <span>4 Beds</span><span>2 Baths</span><span>320 m²</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card property-card" data-location="Durban" data-price="9800000" data-bedrooms="4">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" alt="Oceanfront Retreat" />
+                <div class="card-body">
+                  <span class="text-xs text-gold font-semibold" style="text-transform:uppercase;letter-spacing:0.1em;">Villa</span>
+                  <h3 class="mt-1">Oceanfront Retreat</h3>
+                  <p class="text-sm text-muted">Durban</p>
+                  <p class="text-gold font-bold text-xl mt-2">R 9,800,000</p>
+                  <div class="text-xs text-muted mt-3" style="display:flex;gap:1rem;border-top:1px solid var(--border-color);padding-top:0.75rem;">
+                    <span>4 Beds</span><span>3 Baths</span><span>380 m²</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card property-card" data-location="Johannesburg" data-price="15500000" data-bedrooms="6">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800" alt="Grand Estate Manor" />
+                <div class="card-body">
+                  <span class="text-xs text-gold font-semibold" style="text-transform:uppercase;letter-spacing:0.1em;">Estate</span>
+                  <h3 class="mt-1">Grand Estate Manor</h3>
+                  <p class="text-sm text-muted">Johannesburg</p>
+                  <p class="text-gold font-bold text-xl mt-2">R 15,500,000</p>
+                  <div class="text-xs text-muted mt-3" style="display:flex;gap:1rem;border-top:1px solid var(--border-color);padding-top:0.75rem;">
+                    <span>6 Beds</span><span>5 Baths</span><span>600 m²</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card property-card" data-location="Cape Town" data-price="4500000" data-bedrooms="2">
+                <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800" alt="Industrial Loft" />
+                <div class="card-body">
+                  <span class="text-xs text-gold font-semibold" style="text-transform:uppercase;letter-spacing:0.1em;">Apartment</span>
+                  <h3 class="mt-1">Industrial Loft</h3>
+                  <p class="text-sm text-muted">Cape Town</p>
+                  <p class="text-gold font-bold text-xl mt-2">R 4,500,000</p>
+                  <div class="text-xs text-muted mt-3" style="display:flex;gap:1rem;border-top:1px solid var(--border-color);padding-top:0.75rem;">
+                    <span>2 Beds</span><span>2 Baths</span><span>180 m²</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <h3>PRESTIGE<span class="text-gold">ESTATES</span></h3>
+          <p class="text-sm leading-relaxed">Your trusted partner in luxury real estate. Finding your dream home is our passion.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="home.html" class="nav-click">Home</a>
+            <a href="listings.html" class="nav-click">Listings</a>
+            <a href="about.html" class="nav-click">About Us</a>
+            <a href="team.html" class="nav-click">Our Team</a>
+            <a href="services.html" class="nav-click">Services</a>
+            <a href="contact.html" class="nav-click">Contact</a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p>123 Prestige Avenue, Sandton</p>
+          <p>+27 11 234 5678</p>
+          <p>info@prestigeestates.co.za</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 PrestigeEstates. All rights reserved.</div>
+    </footer>
+
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
