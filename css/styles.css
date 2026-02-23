@@ -623,9 +623,12 @@ textarea.form-input {
 
 .team-card img {
   width: 100%;
-  height: 14rem;
+  /* This keeps the image in a professional portrait shape on all screens */
+  aspect-ratio: 4 / 5; 
   object-fit: cover;
   object-position: top;
+  display: block;
+}
 }
 
 .team-card .info {
@@ -718,7 +721,28 @@ textarea.form-input {
 .map-container iframe {
   border: 0;
 }
+/* Custom fix for Team Images on Mobile */
+@media (max-width: 639px) {
+  .team-card img {
+    /* Increasing height so the 'object-fit: cover' has room to show the face */
+    height: 25rem; 
+    /* Ensures we see the head/shoulders instead of the chest/stomach */
+    object-position: center 15%; 
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; /* Slightly smaller gap to fit 3-up */
+  }
+}
 
+/* Optional: Improve the grid behavior on small phones */
+@media (max-width: 480px) {
+  .team-card img {
+    height: 20rem;
+  }
+}
 /* ========== Text helpers ========== */
 .text-sm { font-size: 0.875rem; }
 .text-xs { font-size: 0.75rem; }
